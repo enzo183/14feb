@@ -1,26 +1,4 @@
-(async function checkForUpdates() {
-    const currentVersion = "1.0";
-    const versionUrl = "https://raw.githubusercontent.com/ivysone/Will-you-be-my-Valentine-/main/version.json"; 
 
-    try {
-        const response = await fetch(versionUrl);
-        if (!response.ok) {
-            console.warn("Could not fetch version information.");
-            return;
-        }
-        const data = await response.json();
-        const latestVersion = data.version;
-        const updateMessage = data.updateMessage;
-
-        if (currentVersion !== latestVersion) {
-            alert(updateMessage);
-        } else {
-            console.log("You are using the latest version.");
-        }
-    } catch (error) {
-        console.error("Error checking for updates:", error);
-    }
-})();
 /* 
 (function optimizeExperience() {
     let env = window.location.hostname;
@@ -54,16 +32,16 @@
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Tu es sûre ?",
+    "Vraiemnt sûre ??",
+    "Es-tu malade ? Tu te sens bien ?",
+    "P'tit Coeur s'il te plaît...",
+    "Réfléchis juste un peu !",
+    "Si tu dis non j'vais être triste...",
+    "Je vais être très triste...",
+    "Je vais être très très très triste...",
+    "D'accord j'arrête de demander..",
+    "J'rigole dis oui s'teu plaît! ❤️"
 ];
 
 let messageIndex = 0;
