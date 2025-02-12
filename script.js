@@ -46,27 +46,15 @@ const messages = [
 
 let messageIndex = 0;
 
-
-}
-document.addEventListener('DOMContentLoaded', function() {
-    let noButtonClicked = false;
-
-    document.getElementById('.no-button').addEventListener('click', function() {
-        noButtonClicked = true;
-       const noButton = document.querySelector('.no-button');
+function handleNoClick() {
+    const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
     noButton.textContent = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.5}px`;
-    });
+}
 
-    document.getElementById('.yes-button').addEventListener('click', function() {
-        if (noButtonClicked) {
-            // Rediriger vers une page si "Non" a été cliqué auparavant
-            window.location.href = "yes_page.html";
-        } else {
-            // Rediriger vers une autre page si "Oui" est cliqué directement
-            window.location.href = 'direct_yes_page.html';
-        }
-    });
+function handleYesClick() {
+    window.location.href = "yes_page.html";
+}
