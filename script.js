@@ -33,7 +33,7 @@
 */
 const messages = [
     "Tu es sûre ?",
-    "Vraiemnt sûre ??",
+    "Vraiment sûre ??",
     "Es-tu malade ? Tu te sens bien ?",
     "P'tit Coeur s'il te plaît...",
     "Réfléchis juste un peu !",
@@ -45,8 +45,10 @@ const messages = [
 ];
 
 let messageIndex = 0;
+let noClicked = false;
 
 function handleNoClick() {
+    noClicked = true;
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
     noButton.textContent = messages[messageIndex];
@@ -56,5 +58,9 @@ function handleNoClick() {
 }
 
 function handleYesClick() {
-    window.location.href = "yes_page.html";
+    if (noClicked) {
+        window.location.href = "yes_page.html";
+    } else {
+        window.location.href = "yes_page_direct.html";
+    }
 }
