@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     yesButton.style.fontSize = `${currentSize * 1.5}px`;
     });
 
-    document.getElementById('yesButton').addEventListener('click', function() {
+    document.getElementById('.yes-button').addEventListener('click', function() {
         if (noButtonClicked) {
             // Rediriger vers une page si "Non" a été cliqué auparavant
             window.location.href = "yes_page.html";
